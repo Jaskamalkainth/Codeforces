@@ -73,7 +73,6 @@ int main()
 	int n , x1 ,y1, x2, y2; 
 	cin >> n >> x1 >> y1 >> x2 >> y2;
 	vector<pair<ll,ll> > points;
-	points.pb(mp(0,0));
 	for(int i = 1; i <= n; i++)
 	{
 		ll x, y; cin >> x >> y;
@@ -82,6 +81,7 @@ int main()
 		points.pb(mp(d1,d2));
 	}
 
+	/*
 	ll ans = mx_ll;
 
 	ll r1 , r2;
@@ -97,6 +97,25 @@ int main()
 			}
 		}
 
+		ans = min ( ans , r1+r2);
+	}
+	cout << ans << "\n";
+	*/
+
+
+	sort(all(points));
+
+	vll maxsuff(n+1);
+	for(int i = n-1; i >= 0; i--)
+	{
+		maxsuff[i] = max ( maxsuff[i+1] , points[i].ss);  
+	}
+
+	ll ans = min ( points[n-1].ff , maxsuff[0] );
+	for(int i = 0; i < n; i++)
+	{
+		ll r1 = points[i].ff;
+		ll r2 = maxsuff[i+1];
 		ans = min ( ans , r1+r2);
 	}
 	cout << ans << "\n";
