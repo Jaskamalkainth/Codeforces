@@ -91,6 +91,7 @@ int main()
 			if(!vist[v])
 			{
 				dist[v] = dist[u] + 1;
+				vist[v] = 1;
 				q.push(v);
 			}
 		}
