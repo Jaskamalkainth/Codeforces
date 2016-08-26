@@ -1,6 +1,5 @@
 /*
  *    J1K7_7
- *
  *    You can use my contents on a Creative Commons - Attribution 4.0 International - CC BY 4.0 License.  XD 
  *    - JASKAMAL KAINTH
  */
